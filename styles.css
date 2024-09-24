@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --mainColor: #03005c;
+    --hoverColor: #35278a;
+}
+
+.wrapper{
+    height: 100%;
+    width: 100%;
+    max-width: 1400px;
+}
+
+/* Header */
+header{
+    height: 140px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+#topHeader{
+    height: 45%;
+    width: 100%;
+    background-color: var(--mainColor);
+    color: white;
+    
+    display: grid;
+    place-items: center;
+}
+
+#topHeader .wrapper, #bottomHeader .wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#topHeader a{
+    color: white;
+    text-decoration:none;
+}
+
+#topHeader .left{
+    width: 50%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+#topHeader .right{
+    width: 50%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+#bottomHeader{
+    height: 55%;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 6px 12px -3px rgba(0,0,0,0.2);
+
+    display: grid;
+    place-items: center;
+}
+
+#bottomHeader .left{
+    display: flex;
+    align-items: center;
+}
+
+#bottomHeader .right{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+}
+
+#bottomHeader a{
+    color: black;
+    text-decoration: none;
+}
+
+#logo{
+    width: 180px;
+}
+
+#expertButton{
+    height: 45px;
+    width: 180px;
+    background-color: var(--mainColor);
+    border-radius: 8px;
+    color: white !important;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+
+    display: grid;
+    place-items: center;
+}
+
+#expertButton:hover{
+    background-color: var(--hoverColor);
+}
+
+/* Main Content */
+#mainContent{
+    height: 750px;
+    width: 100%;
+    margin-top: 140px;
+    background-image: url(./assets/mainContentBackground.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+    display: grid;
+    place-items: center;
+}
+
+#mainContent .wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#mainContent .left{
+    height: 90%;
+    width: 50%;
+}
+
+#mainContentForm{
+    height: 100%;
+    width: 100%;
+    border-radius: 16px;
+    opacity: 0.5;
+    background-color: white;
+}
+
+#mainContent .right{
+    height: 90%;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#mainContent .right img{
+    height: 550px;
+}
+
+/* Website Metrics */
+#websiteMetrics{
+    height: 100px;
+    background-color: var(--hoverColor);
+}
+
+/* About Us */
+#aboutUs{
+    height: 700px;
+}
