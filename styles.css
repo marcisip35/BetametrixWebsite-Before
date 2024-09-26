@@ -1,6 +1,8 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
 }
 
 :root{
@@ -20,7 +22,7 @@ header{
     width: 100%;
     position: fixed;
     top: 0;
-    font-family: "Poppins", sans-serif;
+    z-index: 1;
 }
 
 #topHeader{
@@ -94,7 +96,22 @@ header{
     width: 180px;
 }
 
-#expertButton{
+#expertButton {
+    height: 45px;
+    width: 180px;
+    background: linear-gradient(90deg, var(--mainColor), var(--mainColor));
+    border-radius: 8px;
+    color: white !important;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    animation: backgroundGlow 2s infinite;
+}
+
+#expertButton {
     height: 45px;
     width: 180px;
     background-color: var(--mainColor);
@@ -105,10 +122,18 @@ header{
 
     display: grid;
     place-items: center;
+    cursor: pointer;
+    position: relative; /* Necessary for the shadow effect */
+    animation: explodeEffect 1.5s infinite;
 }
 
-#expertButton:hover{
-    background-color: var(--hoverColor);
+@keyframes explodeEffect {
+    0% {
+        box-shadow: 0 0 0px 0px var(--mainColor); /* skyblue color, no spread */
+    }
+    100% {
+        box-shadow: 0 0 20px 10px var(--hoverColor); /* explosion begins expanding */
+    }
 }
 
 /* Main Content */
@@ -120,12 +145,14 @@ header{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
     
     display: grid;
     place-items: center;
 }
 
 #mainContent .wrapper{
+
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -133,25 +160,88 @@ header{
 }
 
 #mainContent .left{
-    height: 90%;
+    height: 85%;
     width: 50%;
+    border-radius: 16px;
+    opacity: 0.85;
+    background-color: white;
+    padding: 20px;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#mainContent .left .top{
+    height: 50%;
+    width: 100%;
+    font-size: 18px;
+
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+}
+
+#mainContent .left h1{
+    color: var(--hoverColor);
 }
 
 #mainContentForm{
-    height: 100%;
     width: 100%;
-    border-radius: 16px;
-    opacity: 0.5;
-    background-color: white;
+    height: 35%;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#mainContentForm label{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#mainContentForm input{
+    height: 30px;
+    width: 160px;
+    border-color: var(--mainColor);
+    padding-left: 5px;
+    font-size: 17px;
+}
+
+#mainContentForm input:hover{
+    background-color: var(--hoverColor);
+}
+
+#consultationButton{
+    height: 40px;
+    background-color: var(--mainColor);
+    color:white;
+    border:none;
+    border-radius: 8px;
+    grid-column: span 2;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+#consultationButton:hover{
+    cursor: pointer;
+    background-color: var(--hoverColor);
 }
 
 #mainContent .right{
     height: 90%;
-    width: 50%;
+    width: 40%;
+    font-size: 18px;
+    color: var(--mainColor);
 
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#mainContent .right h1{
+    letter-spacing: 0.5px;
+    text-shadow: rgb(255, 255, 255) 1px 0px 0px, rgb(255, 255, 255) 0.540302px 0.841471px 0px, rgb(255, 255, 255) -0.416147px 0.909297px 0px, rgb(255, 255, 255) -0.989992px 0.14112px 0px, rgb(255, 255, 255) -0.653644px -0.756802px 0px, rgb(255, 255, 255) 0.283662px -0.958924px 0px, rgb(255, 255, 255) 0.96017px -0.279415px 0px;
 }
 
 #mainContent .right img{
@@ -162,9 +252,227 @@ header{
 #websiteMetrics{
     height: 100px;
     background-color: var(--hoverColor);
+
+    display: grid;
+    place-items: center;
+}
+
+#websiteMetrics .wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#websiteMetrics .left, #websiteMetrics .middle, #websiteMetrics .right{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 /* About Us */
 #aboutUs{
-    height: 700px;
+    padding-top: 150px;
+    padding-bottom: 150px;
+
+    display: grid;
+    place-items: center;
 }
+
+#aboutUs .wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#aboutUs .left{
+    height: 100%;
+    width: 45%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#aboutUs .left h1{
+    color: var(--mainColor);
+    font-size: 50px;
+}
+
+#aboutUs .left p{
+    letter-spacing: 0.5px;
+    font-size: 17px;
+}
+
+#aboutUs .right{
+    height: 100%;
+    width: 50%;
+
+    display: grid;
+    place-items: center;
+}
+
+#aboutUs img{
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    box-shadow: 10px 10px 14px 0px rgba(0,0,0,0.75);
+}
+
+/* Core Values */
+#coreValues{
+    height: 250px;
+    background-color: var(--hoverColor);
+
+    display: grid;
+    place-items: center;
+}
+
+#coreValues .wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#coreValues .left, #coreValues .middle, #coreValues .right{
+    height: 100%;
+    width: 30%;
+    color: white;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Client Testiominals */
+#clientTestimonials{
+    padding-top: 130px;
+    padding-bottom: 130px;
+
+    display: grid;
+    place-items: center;
+    gap: 50px;
+}
+
+#clientTestimonials .wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+#clientTestimonials h1{
+    color: var(--mainColor);
+    font-size: 50px;
+}
+
+#clientTestimonials .items{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;   
+}
+
+#clientTestimonials .item{
+    height: 550px;
+    width: 25%;
+    padding: 35px;
+    border-radius: 8px;
+    background-color: var(--hoverColor);
+    color: white;
+    margin-top: 35px;
+    transition-duration: 0.5s;
+    letter-spacing: 0.5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+}
+
+#clientTestimonials .item:hover{
+    margin-top: 0px;
+}
+
+#clientTestimonials img{
+    height: 200px;
+    border-radius: 50%;
+}
+
+/* Why Choose Us */
+#whyChooseUs{
+    height: 800px;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    background-color: var(--hoverColor);
+    color: white;
+
+    display: grid;
+    place-items: center;
+}
+
+#whyChooseUs .wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+#whyChooseUs .top{    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#whyChooseUs .bottom{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#whyChooseUs .item{
+    height: 300px;
+    width: 100%;
+    border: 1px solid red;
+
+    display: flex;
+    flex-direction: row;
+}
+
+#whyChooseUs h1{
+    color: goldenrod;
+    font-size: 40px;
+}
+
+/* Location */
+#location{
+    height: 500px;
+
+    display: grid;
+    place-items: center;
+}
+
+#location .wrapper{
+
+}
+
+/* Footer */
+footer{
+    height: 500px;
+    background-color: var(--mainColor);
+
+    display: grid;
+    place-items: center;
+}
+
+
+

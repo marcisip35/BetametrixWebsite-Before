@@ -23,7 +23,7 @@ bottomHeader.innerHTML = `                        <div class="left">
                         </div>
                         <div class="right">
                             <a href="">Home</a>
-                            <a href="">About Us</a>
+                            <a href="#aboutUs">About Us</a>
                             <a href="">Locations</a>
                             <a href="">Client Testimonials</a>
                             <a href="" id="expertButton">Talk To An Expert</a>
