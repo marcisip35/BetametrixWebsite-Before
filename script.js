@@ -14,12 +14,12 @@ topHeader.innerHTML = `                        <div class="left">
                             <a href="">602-680-7300</a>
                         </div>
                         <div class="right">
-                            <a href="">Contact Us</a>
+                            <a href="#contactUs">Contact Us</a>
                             <p>|</p>
                             <a href="">Pricing</a>
                         </div>`;
 bottomHeader.innerHTML = `                        <div class="left">
-                            <img src="./assets/logo.jpg" id="logo">
+                            <img src="./assets/logo.png" id="logo">
                         </div>
                         <div class="right">
                             <a href="">Home</a>
